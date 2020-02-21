@@ -1,0 +1,146 @@
+/*
+ALINHAMENTO, ESPAÇAMENTO, LARGURA E ALTURA;
+*/
+* {
+  box-sizing: border-box;
+}
+html, body{
+  margin: 0px;
+}
+h1,h2{
+  color: #000000cc;
+}
+
+body{
+  display: flex; /* O display se alinha a direita */
+  flex-direction: column;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  background-color: white;
+}
+
+header h1, main h2 {
+  margin-bottom: 70px;
+}
+
+
+main span {
+  color: #ff4f4f;
+}
+.form h2 {
+  text-align: right;
+  color: #ffffffee;
+  font-size: 18px;
+}
+header, main, footer{
+  text-align: center;
+}
+
+
+header, .form, main{
+  margin: 0 auto 70px;
+
+  width: 50%;
+  max-width: 500px;
+
+}
+
+/* HEADER */
+header button {
+  margin-top: 16px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  background-color: #ff4f4f;
+  color: white;
+  font-weight: bold;
+}
+.logo{
+  width: 120px;
+  margin-top: 70px 0;
+}
+/* FORM */
+section.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  grid-gap: 45px;
+  background-color: #ff4f4f;
+  padding: 16px 64px;
+  border-radius: 6px;
+}
+form input,
+form button {
+  width: 100%;
+  margin-bottom: 4px;
+  box-sizing: border-box; /* Adiciona preenchimento com largura */
+  padding: 8px 16px; /* short handle (emcima embaixo, nas laterais*/
+  border-radius: 4px;
+  border: 1px white solid;
+  border: #ffffff88 solid;
+
+}
+form input{
+  background-color: transparent;
+}
+form input::placeholder{
+  color: #ffffffaa;
+}
+form button {
+  font-weight: bold;
+}
+/* MAIN */
+
+main .donors{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; /*  cada fr listado, é uma fraçao de espacamento que sobra na pagina. */
+}
+.blood{
+  color:#ff4f4f;
+  font-weight: bold;
+  font-size: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.blood::before{
+  content:"";
+  background-color: #ff4f4f11;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+
+  border-radius:50%;
+  border-top-right-radius: 0%;
+  transform: rotate(-45deg);
+
+}
+
+.donor p{
+  margin-top: 24px;
+  margin-bottom: 64px;
+  font-size: 14px;
+}
+footer{
+  margin-top: auto;
+  padding-bottom: 16px;
+  border: 1px solid #eee;
+
+
+}
+
+/*
+Funcionalidades com JS
+*/
+section.form {
+  transition: all 300ms
+}
+
+section.form.hide{
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  margin-top: -70px;
+}
